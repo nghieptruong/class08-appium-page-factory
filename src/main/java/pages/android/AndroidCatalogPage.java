@@ -1,15 +1,16 @@
-package pages;
+package pages.android;
 
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.abstracts.CatalogPage;
 
-public class CatalogPage extends CommonPage {
+public class AndroidCatalogPage extends CatalogPage {
 
     @AndroidFindBy(accessibility = "title")
     public WebElement lblTitle;
 
-    public CatalogPage(WebDriver driver) {
+    public AndroidCatalogPage(WebDriver driver) {
         super(driver);
     }
 

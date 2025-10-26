@@ -1,7 +1,8 @@
 package pages;
 
-import pages.components.NavigationBar;
+import pages.abstracts.components.NavigationBar;
 import org.openqa.selenium.WebDriver;
+import pages.factories.PageManagerFactory;
 
 
 public class CommonPage extends BasePage {
@@ -10,7 +11,7 @@ public class CommonPage extends BasePage {
 
     public CommonPage(WebDriver driver) {
         super(driver);
-        this.navigationBar = new NavigationBar(driver);
+        this.navigationBar = PageManagerFactory.getNavigationBar();
     }
 
     public NavigationBar getNavigationBar() {

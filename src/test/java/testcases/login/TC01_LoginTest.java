@@ -1,11 +1,11 @@
 package testcases.login;
 
 import base.BaseTest;
-import drivers.DriverManager;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.CatalogPage;
-import pages.LoginPage;
+import pages.abstracts.CatalogPage;
+import pages.abstracts.LoginPage;
+import pages.factories.PageManagerFactory;
 import reports.ExtentReportManager;
 
 public class TC01_LoginTest extends BaseTest {
@@ -13,8 +13,8 @@ public class TC01_LoginTest extends BaseTest {
     @Test
     public void TC01_Verify_Valid_Login() {
 
-        LoginPage loginPage = new LoginPage(DriverManager.getCurrentDriver());
-        CatalogPage catalogPage = new CatalogPage(DriverManager.getCurrentDriver());
+        LoginPage loginPage = PageManagerFactory.getLoginPage();
+        CatalogPage catalogPage = PageManagerFactory.getCatalogPage();
 
         ExtentReportManager.info("Start TC01_Verify_Valid_Login");
 
